@@ -1,0 +1,183 @@
+{% extends "base.html" %} {% block content %}
+
+<section id="content">
+	<div class="container">
+		<div class="block-header">
+			<h2>BBS</h2>
+			<ul class="actions" id="addNews">
+				<li>
+					<button class="btn btn-primary btn-icon waves-effect waves-circle waves-float"><i class="zmdi zmdi-plus"></i></button>
+				</li>
+			</ul>
+		</div>
+		<div class="card">
+			<div class="listview lv-bordered lv-lg">
+				<div class="lv-header-alt clearfix">
+					<h2 class="lvh-label " id="newsType">每日芝士</h2>
+					<!--hidden-xs-->
+					<!--此功能下一版本实现-->
+					<div class="lvh-search">
+						<input type="text" placeholder="Start typing..." class="lvhs-input" id="keyEdit">
+
+						<i class="lvh-search-close">&times;</i>
+						<i class="lvh-search-close " style="right:50px" onclick="gosearch()">&radic;</i>
+					</div>
+
+					<ul class="lv-actions actions">
+						<li>
+							<a href="" class="lvh-search-trigger">
+								<i class="zmdi zmdi-search"></i>
+							</a>
+						</li>
+
+						<li class="dropdown">
+							<a href="" data-toggle="dropdown" aria-expanded="true">
+								<i class="zmdi zmdi-sort"></i>
+							</a>
+
+							<ul class="dropdown-menu dropdown-menu-right">
+								<li>
+									<a href="javascript:;">搜索本站</a>
+								</li>
+								<!--<li>
+											<a href="">搜索全站</a>
+										</li>-->
+
+							</ul>
+						</li>
+
+					</ul>
+				</div>
+				<div class="lv-body" id="lv-body">
+					<!--此处添加列表信息-->
+				</div>
+			</div>
+
+			<ul class="pagination lv-pagination" id="lv-pagination">
+
+			</ul>
+		</div>
+
+</section>
+
+</section>
+
+<footer id="footer">
+	Copyright &copy; 2015 口袋学习
+
+	<ul class="f-menu">
+		<li><a href="">Home</a></li>
+		<li><a href="">Dashboard</a></li>
+		<li><a href="">Reports</a></li>
+		<li><a href="">Support</a></li>
+		<li><a href="">Contact</a></li>
+	</ul>
+</footer>
+
+<!-- Older IE warning message -->
+<!--[if lt IE 9]>
+            <div class="ie-warning">
+                <h1 class="c-white">Warning!!</h1>
+                <p>You are using an outdated version of Internet Explorer, please upgrade <br/>to any of the following web browsers to access this website.</p>
+                <div class="iew-container">
+                    <ul class="iew-download">
+                        <li>
+                            <a href="http://www.google.com/chrome/">
+                                <img src="img/browsers/chrome.png" alt="">
+                                <div>Chrome</div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://www.mozilla.org/en-US/firefox/new/">
+                                <img src="img/browsers/firefox.png" alt="">
+                                <div>Firefox</div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="http://www.opera.com">
+                                <img src="img/browsers/opera.png" alt="">
+                                <div>Opera</div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://www.apple.com/safari/">
+                                <img src="img/browsers/safari.png" alt="">
+                                <div>Safari</div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="http://windows.microsoft.com/en-us/internet-explorer/download-ie">
+                                <img src="img/browsers/ie.png" alt="">
+                                <div>IE (New)</div>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <p>Sorry for the inconvenience!</p>
+            </div>   
+        <![endif]-->
+
+<!-- Javascript Libraries -->
+<script src="{{ url_for('static', filename='vendors/bower_components/jquery/dist/jquery.min.js') }}"></script>
+<script src="{{ url_for('static', filename='vendors/bower_components/bootstrap/dist/js/bootstrap.min.js') }}"></script>
+
+<script src="{{ url_for('static', filename='vendors/bower_components/flot/jquery.flot.js') }}"></script>
+<script src="{{ url_for('static', filename='vendors/bower_components/flot/jquery.flot.resize.js') }}"></script>
+<script src="{{ url_for('static', filename='vendors/bower_components/flot.curvedlines/curvedLines.js') }}"></script>
+<script src="{{ url_for('static', filename='vendors/sparklines/jquery.sparkline.min.js') }}"></script>
+<script src="{{ url_for('static', filename='vendors/bower_components/jquery.easy-pie-chart/dist/jquery.easypiechart.min.js') }}"></script>
+
+<script src="{{ url_for('static', filename='vendors/bower_components/moment/min/moment.min.js') }}"></script>
+<script src="{{ url_for('static', filename='vendors/bower_components/fullcalendar/dist/fullcalendar.min.js') }} "></script>
+<script src="{{ url_for('static', filename='vendors/bower_components/simpleWeather/jquery.simpleWeather.min.js') }}"></script>
+<script src="{{ url_for('static', filename='vendors/bower_components/jquery.nicescroll/jquery.nicescroll.min.js') }}"></script>
+<script src="{{ url_for('static', filename='vendors/bower_components/Waves/dist/waves.min.js') }}"></script>
+<script src="{{ url_for('static', filename='vendors/bootstrap-growl/bootstrap-growl.min.js') }}"></script>
+<script src="{{ url_for('static', filename='vendors/bower_components/bootstrap-sweetalert/lib/sweet-alert.min.js') }}"></script>
+
+<!-- Placeholder for IE9 -->
+<!--[if IE 9 ]>
+        <script src="vendors/bower_components/jquery-placeholder/jquery.placeholder.min.js"></script>
+    <![endif]-->
+
+<script src="{{ url_for('static', filename='js/flot-charts/curved-line-chart.js') }}"></script>
+<script src="{{ url_for('static', filename='js/flot-charts/line-chart.js') }}"></script>
+<script src="{{ url_for('static', filename='js/charts.js') }}"></script>
+
+<script src="{{ url_for('static', filename='js/charts.js') }}"></script>
+<script src="{{ url_for('static', filename='js/functions.js') }}"></script>
+<script src="{{ url_for('static', filename='js/demo.js') }}"></script>
+<script src="{{ url_for('static', filename='js/fun.js') }}"></script>
+<script src="{{ url_for('static', filename='js/business/BBSlist.js') }}"></script>
+<script>
+	$('#addNews').click(function() {
+		BBS.add();
+	});
+	$("body").on("click", ".page", function() {
+		BBS.goPage($(this).html());
+	});
+	$("body").on("click", ".prove", function() {
+		BBS.prove();
+	});
+	$("body").on("click", ".next", function() {
+		BBS.next();
+	});
+	$("body").on("click", ".delete", function(event) {
+		BBS.del($(this).parent().parent().parent().find('.articleId').html());
+		event.stopPropagation();
+	});
+	$("body").on("click", ".modify", function(event) {
+		BBS.modify($(this).parent().parent().parent().find('.articleId').html());
+		event.stopPropagation();
+	});
+	$("body").on("click", ".lv-item", function() {
+		BBS.see($(this).find('.media-body').find('.articleId').html());
+	});
+		//console.log($('#keyEdit').val());
+	function gosearch(){
+		BBS.search($('#keyEdit').val());
+	}
+		
+</script>
+
+{% endblock %}

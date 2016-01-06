@@ -1,0 +1,362 @@
+{% extends "base.html" %} {% block content %}
+
+<section id="content">
+	<div class="container">
+		<div class="block-header">
+			<h2>资讯</h2>
+		</div>
+
+		<div class="card c-timeline" id="profile-main">
+
+			<div class="pm-body clearfix" style="padding-left: 1px;">
+
+				<div class="timeline">
+
+					<div class="t-view" data-tv-type="image">
+
+						<div class="tv-body">
+
+							<p id="artsummary">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sem dolor, posuere convallis blandit sit amet, aliquet in est. Ut condimentum magna enim, </p>
+							<div class="fg-line ">
+								<textarea class="form-control" rows="2" placeholder="标题" id="artsummarytextarea"></textarea>
+							</div>
+
+							<div class="clearfix">
+								<button class="btn btn-success  pull-right m-t-10" data-toggle="modal" data-target="#myModal" id="upfilebtn">上传帖子图片</button>
+							</div>
+							<p id="arttext">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sem dolor, posuere convallis blandit sit amet, aliquet in est. Ut condimentum magna enim, non venenatis elit interdum accumsan. In hac habitasse platea dictumst. Etiam molestie felis
+								non mollis viverra. In ipsum lorem, fermentum vitae lectus in, accumsan malesuada neque.</p>
+							<div class="fg-line ">
+								<textarea class="form-control" rows="3" placeholder="图片地址" id="artsummaryEdit"></textarea>
+							</div>
+							<p id="nr">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sem dolor, posuere convallis blandit sit amet, aliquet in est. Ut condimentum magna enim, non venenatis elit interdum accumsan. In hac habitasse platea dictumst. Etiam molestie felis
+								non mollis viverra. In ipsum lorem, fermentum vitae lectus in, accumsan malesuada neque.</p>
+							<div class="fg-line m-t-10">
+								<textarea class="form-control" rows="10" placeholder="内容" id="nrEdit"></textarea>
+							</div>
+							<div class="listview lv-bordered lv-lg clearfix">
+								<div class="input-group m-10" style="display: table;float: left;width:268px;">
+									<span class="input-group-addon"><i class="zmdi zmdi-assignment"></i></span>
+									<div class="fg-line">
+										<select class="form-control" id="forum">
+
+										</select>
+									</div>
+								</div>
+								<div class="lv-item media" style="width:160px;float:left;border:0;">
+									<div class="checkbox pull-left">
+										<label>
+											<input type="checkbox" value="" id="status">
+											<i class="input-helper"></i>
+										</label>
+									</div>
+									<div class="media-body">
+										<div class="lv-title">置顶</div>
+									</div>
+								</div>
+								<div class="lv-item media" style="width:160px;float:left;">
+									<div class="checkbox pull-left">
+										<label>
+											<input type="checkbox" value="" id="level">
+											<i class="input-helper"></i>
+										</label>
+									</div>
+									<div class="media-body">
+										<div class="lv-title">精华帖</div>
+									</div>
+								</div>
+
+							</div>
+							<div class="clearfix"></div>
+
+							<ul class="tvb-stats">
+								<li class="tvbs-comments"><i class="zmdi zmdi-comment"></i><span class="no pinglun">  </span> <span class="hidden-xs">评论</span></li>
+
+							</ul>
+<div class="fg-line">
+	<select class="accounts" style="padding:5px;border:solid 1px #0d8aee;width:140px;" id="bbsaccount" style="display: none;">
+										
+									</select>
+</div>
+							<div class="clearfix">
+								<button class="btn btn-primary  btn-lg pull-right" id="modifybtn">修改</button>
+							</div>
+
+						</div>
+						<ul class="clearfix" id="commentPage">
+
+						</ul>
+						<div class="tv-comments">
+							<ul class="tvc-lists" id="commlist">
+
+							</ul>
+						</div>
+
+						<div class="tv-comments">
+							<ul class="tvc-lists">
+
+								<li class="p-20">
+									
+									<div class="fg-line">
+										<textarea class="form-control auto-size  imgaddress" placeholder="图片地址" rows="2"></textarea>
+										<select class="accounts" style="padding:5px;position:relative;top:35px;left:0;border:solid 1px #0d8aee;width:140px;">
+										
+										<button class="m-t-15 btn btn-warning btn-sm pull-right addComment m-r-10" data-toggle="modal" data-target="#myModal">添加图片</button>
+										<textarea class="form-control auto-size" placeholder="撰写评论..." id="commentEdit" style="padding-left:150px;"></textarea>
+									</div>
+
+									<button class="m-t-15 btn btn-primary btn-sm addComment">发表</button>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+
+</section>
+
+<footer id="footer">
+	Copyright &copy; 2015 口袋学习
+
+	<ul class="f-menu">
+		<li><a href="">Home</a></li>
+		<li><a href="">Dashboard</a></li>
+		<li><a href="">Reports</a></li>
+		<li><a href="">Support</a></li>
+		<li><a href="">Contact</a></li>
+	</ul>
+</footer>
+
+<!-- Modal -->
+<div class="moduleTemp">
+	<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+		<div class="modal-dialog" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+					<h4 class="modal-title" id="myModalLabel">上传图片</h4>
+				</div>
+				<div class="modal-body">
+					...
+					<form name="demoForm" id="demoForm" method="post" enctype="multipart/form-data" action="http://img.kdzikao.com/picture/upload" target="id_iframe">
+						<img id="preview1" width=300 height=200 src="">
+						<br>
+						<input type="file" name="pictureFile" accept="image/*" class="sc_btn sc_btn_file" onchange="upload(this,1)" />
+						<!--<button class="btn sc_btn">选取图片文件</button>-->
+
+						<input id="txtUserName" name="category" type="text" value="bbs" style="display:none;" />
+
+						<input id="subLogin" name="subLogin" type="submit" value="提交" class="btn sc_btn btns m-t-10 m-b-10" style="width:100px;" />
+
+						<!--提交按钮-->
+					</form>
+
+					<iframe id="id_iframe" name="id_iframe" style="">
+
+					</iframe>
+					<p>
+						将上面的文字全部复制到下方输入框，
+						<br />系统会自动识别图片地址</p>
+					<input id="srcline" type="text" style="width:300px;" />
+
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+					<button type="button" class="btn btn-primary sureImg" data-dismiss="modal">确定</button>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="showSuccess">
+	
+</div>
+<!-- Older IE warning message -->
+<!--[if lt IE 9]>
+            <div class="ie-warning">
+                <h1 class="c-white">Warning!!</h1>
+                <p>You are using an outdated version of Internet Explorer, please upgrade <br/>to any of the following web browsers to access this website.</p>
+                <div class="iew-container">
+                    <ul class="iew-download">
+                        <li>
+                            <a href="http://www.google.com/chrome/">
+                                <img src="img/browsers/chrome.png" alt="">
+                                <div>Chrome</div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://www.mozilla.org/en-US/firefox/new/">
+                                <img src="img/browsers/firefox.png" alt="">
+                                <div>Firefox</div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="http://www.opera.com">
+                                <img src="img/browsers/opera.png" alt="">
+                                <div>Opera</div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://www.apple.com/safari/">
+                                <img src="img/browsers/safari.png" alt="">
+                                <div>Safari</div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="http://windows.microsoft.com/en-us/internet-explorer/download-ie">
+                                <img src="img/browsers/ie.png" alt="">
+                                <div>IE (New)</div>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <p>Sorry for the inconvenience!</p>
+            </div>   
+        <![endif]-->
+
+<!-- Javascript Libraries -->
+<script src="{{ url_for('static', filename='vendors/bower_components/jquery/dist/jquery.min.js') }}"></script>
+<script src="{{ url_for('static', filename='vendors/bower_components/bootstrap/dist/js/bootstrap.min.js') }}"></script>
+
+<script src="{{ url_for('static', filename='vendors/bower_components/flot/jquery.flot.js') }}"></script>
+<script src="{{ url_for('static', filename='vendors/bower_components/flot/jquery.flot.resize.js') }}"></script>
+<script src="{{ url_for('static', filename='vendors/bower_components/flot.curvedlines/curvedLines.js') }}"></script>
+<script src="{{ url_for('static', filename='vendors/sparklines/jquery.sparkline.min.js') }}"></script>
+<script src="{{ url_for('static', filename='vendors/bower_components/jquery.easy-pie-chart/dist/jquery.easypiechart.min.js') }}"></script>
+
+<script src="{{ url_for('static', filename='vendors/bower_components/moment/min/moment.min.js') }}"></script>
+<script src="{{ url_for('static', filename='vendors/bower_components/fullcalendar/dist/fullcalendar.min.js') }} "></script>
+<script src="{{ url_for('static', filename='vendors/bower_components/simpleWeather/jquery.simpleWeather.min.js') }}"></script>
+<script src="{{ url_for('static', filename='vendors/bower_components/jquery.nicescroll/jquery.nicescroll.min.js') }}"></script>
+<script src="{{ url_for('static', filename='vendors/bower_components/Waves/dist/waves.min.js') }}"></script>
+<script src="{{ url_for('static', filename='vendors/bootstrap-growl/bootstrap-growl.min.js') }}"></script>
+<script src="{{ url_for('static', filename='vendors/bower_components/bootstrap-sweetalert/lib/sweet-alert.min.js') }}"></script>
+
+<!-- Placeholder for IE9 -->
+<!--[if IE 9 ]>
+        <script src="vendors/bower_components/jquery-placeholder/jquery.placeholder.min.js"></script>
+    <![endif]-->
+
+<script src="{{ url_for('static', filename='js/flot-charts/curved-line-chart.js') }}"></script>
+<script src="{{ url_for('static', filename='js/flot-charts/line-chart.js') }}"></script>
+<script src="{{ url_for('static', filename='js/charts.js') }}"></script>
+
+<script src="{{ url_for('static', filename='js/charts.js') }}"></script>
+<script src="{{ url_for('static', filename='js/functions.js') }}"></script>
+<script src="{{ url_for('static', filename='js/demo.js') }}"></script>
+<script src="{{ url_for('static', filename='js/fun.js') }}"></script>
+
+<script src="{{ url_for('static', filename='js/business/BBSarticle.js') }}"></script>
+
+<script>
+	if ($('.fg-line')[0]) {
+		$('body').on('focus', '.form-control', function() {
+			$(this).closest('.fg-line').addClass('fg-toggled');
+		})
+		$('body').on('blur', '.form-control', function() {
+			var p = $(this).closest('.form-group');
+			var i = p.find('.form-control').val();
+			if (p.hasClass('fg-float')) {
+				if (i.length == 0) {
+					$(this).closest('.fg-line').removeClass('fg-toggled');
+				}
+			} else {
+				$(this).closest('.fg-line').removeClass('fg-toggled');
+			}
+		});
+	}
+
+	function upload(file, type) {
+		// savePhotoInfo(type);
+		var MAXWIDTH = 300;
+		var MAXHEIGHT = 200;
+		var div = document.getElementById('photoDiv' + type);
+		if (file.files && file.files[0]) {
+			var img = document.getElementById('preview' + type);
+			img.onload = function() {
+				var rect = clacImgZoomParam(MAXWIDTH, MAXHEIGHT, img.offsetWidth, img.offsetHeight, type);
+				img.width = rect.width;
+				img.height = rect.height;
+				//                 img.style.marginLeft = rect.left+'px';
+				img.style.marginTop = rect.top + 'px';
+			}
+			var reader = new FileReader();
+			reader.onload = function(evt) {
+				img.src = evt.target.result;
+			}
+			reader.readAsDataURL(file.files[0]);
+		} else //兼容IE
+		{
+			var sFilter = 'filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(sizingMethod=scale,src="';
+			file.select();
+			var src = document.selection.createRange().text;
+			var img = document.getElementById('preview' + type);
+			img.filters.item('DXImageTransform.Microsoft.AlphaImageLoader').src = src;
+			var rect = clacImgZoomParam(MAXWIDTH, MAXHEIGHT, img.offsetWidth, img.offsetHeight, type);
+			status = ('rect:' + rect.top + ',' + rect.left + ',' + rect.width + ',' + rect.height);
+			div.innerHTML = "<div id=divhead style='width:" + rect.width + "px;height:" + rect.height + "px;margin-top:" + rect.top + "px;" + sFilter + src + "\"'></div>";
+		}
+	}
+
+	function clacImgZoomParam(maxWidth, maxHeight, width, height, type) {
+		var param = {
+			top: 0,
+			left: 0,
+			width: width,
+			height: height
+		};
+		if (width > maxWidth || height > maxHeight) {
+			rateWidth = width / maxWidth;
+			rateHeight = height / maxHeight;
+			if (rateWidth > rateHeight) {
+				param.width = maxWidth;
+				param.height = Math.round(height / rateWidth);
+			} else {
+				param.width = Math.round(width / rateHeight);
+				param.height = maxHeight;
+			}
+		}
+		param.left = Math.round((maxWidth - param.width) / 2);
+		param.top = Math.round((maxHeight - param.height) / 2);
+		//直接上传
+		return param;
+	}
+	var UpType = 0;
+	//		UpType=1;文章图片上传
+	//		UpType=2;文章封面
+	//		UpType=3;轮播图片
+	function GetImgUrl(str) {
+		console.log(str);
+		var obj = jQuery.parseJSON(str);
+		str = obj.url;
+		console.log(str);
+		return str;
+	}
+	$('.sureImg').click(function() {
+		//			var imgstr = $('#srcline').val();
+		var imgstr = GetImgUrl($('#srcline').val());
+		var str = "";
+		if ($('#artsummaryEdit').parent().css('display') == 'none'){
+			str=$('.imgaddress').val();
+		}else{
+		str = document.getElementById('artsummaryEdit').value;}
+		if (str == "") {
+			str = imgstr;
+		} else {
+			str = str + ',' + imgstr;
+		}
+		//str = str + '<img src="' + imgstr + '" width="100%" style="display:block;">';
+		if ($('#artsummaryEdit').parent().css('display') == 'none') {
+			$('.imgaddress').val(str);
+		} else {
+			document.getElementById('artsummaryEdit').value = str;
+		}
+		console.log(str);
+		return;
+	});
+</script>
+
+{% endblock %}

@@ -1,0 +1,48 @@
+{
+    "msg":{
+        "articleType":"报考讯息",
+        "basics":[
+            {
+                "articleId":94,            
+                "articleType":"SIGN_UP_INFO",     
+                "attachUrl":"",         
+                "briefText":"null",      
+                "commentNum":0,         
+                "createdTime":"Mon, 21 Sep 2015 17:05:18 GMT",   
+                "expiredTime":"Tue, 10 Oct 2017 00:00:00 GMT",    
+                "handPicked":0,       
+                "id":82,          
+                "instruction":"北京市行政管理（独立本科段）2015年10月考试安排",   
+                "majorId":"01B0302",  
+                "majorName":"行政管理学（独立本科段）",   
+                "panelUrl":"img/profile-pics/1.jpg",     
+                "provinceId":"0",     
+                "provinceName":"北京市",     
+                "thumbNum":200,       
+                "transmitNum":0      
+            },
+            {
+                "articleId":95,
+                "articleType":"SIGN_UP_INFO",
+                "attachUrl":"",
+                "briefText":"null",
+                "commentNum":0,
+                "createdTime":"Mon, 21 Sep 2015 17:05:21 GMT",
+                "expiredTime":"Tue, 10 Oct 2017 00:00:00 GMT",
+                "handPicked":0,
+                "id":83,
+                "instruction":"北京市计算机网络（独立本科段）2015年10月考试安排",
+                "majorId":"01B0802",
+                "majorName":"计算机网络",
+                "panelUrl":"http://img.kdzikao.com/test/image/5089c400bf0e76e1b019b01871204e60.jpg",
+                "provinceId":"0",
+                "provinceName":"北京市",
+                "thumbNum":0,
+                "transmitNum":135
+            }
+        ],
+        "page":2,       
+        "pagenum":4      
+    },
+    "result":"true"
+}

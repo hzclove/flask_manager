@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<!--[if IE 9 ]><html class="ie9"><![endif]-->
+
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>口袋学习, 让知识触手可及</title>
+
+	<!-- Vendor CSS -->
+	<link href="{{ url_for('static', filename='vendors/bower_components/fullcalendar/dist/fullcalendar.min.css') }}" rel="stylesheet">
+	<link href="{{ url_for('static', filename='vendors/bower_components/animate.css/animate.min.css') }}" rel="stylesheet">
+	<link href="{{ url_for('static', filename='vendors/bower_components/bootstrap-sweetalert/lib/sweet-alert.css') }}" rel="stylesheet">
+	<link href="{{ url_for('static', filename='vendors/bower_components/material-design-iconic-font/dist/css/material-design-iconic-font.css') }}" rel="stylesheet">
+
+	<!-- CSS -->
+	<link href="{{ url_for('static', filename='css/app.min.1.css') }}" rel="stylesheet">
+	<link href="{{ url_for('static', filename='css/app.min.2.css') }}" rel="stylesheet">
+	<link href="{{ url_for('static', filename='css/oms.css') }}" rel="stylesheet">
+			<link href="{{ url_for('static', filename='css/mystyle.css') }}" rel="stylesheet">
+<link href="{{ url_for('static', filename='css/jquery.datetimepicker.css') }}" rel="stylesheet">
+</head>
+
+<body>
+	<header id="header">
+		<ul class="header-inner">
+			<li id="menu-trigger" data-trigger="#sidebar">
+				<div class="line-wrap">
+					<div class="line top"></div>
+					<div class="line center"></div>
+					<div class="line bottom"></div>
+				</div>
+			</li>
+
+			<li class="logo hidden-xs">
+				<a href="index.html">口袋学习</a>
+			</li>
+
+			<li class="pull-right">
+				<ul class="top-menu">
+					<li id="toggle-width">
+						<div class="toggle-switch">
+							<input id="tw-switch" type="checkbox" hidden="hidden">
+							<label for="tw-switch" class="ts-helper"></label>
+						</div>
+					</li>
+					<li id="top-search">
+						<a class="tm-search" href=""></a>
+					</li>
+					<li class="dropdown">
+						<a data-toggle="dropdown" class="tm-settings" href=""></a>
+						<ul class="dropdown-menu dm-icon pull-right">
+							<li class="hidden-xs">
+								<a data-action="fullscreen" href=""><i class="zmdi zmdi-fullscreen"></i> 全屏操作</a>
+							</li>
+							<li>
+								<a data-action="clear-localstorage" href=""><i class="zmdi zmdi-delete"></i> 清除缓存</a>
+							</li>
+						</ul>
+					</li>
+			</li>
+			</ul>
+
+			<!-- Top Search Content -->
+			<div id="top-search-wrap">
+				<input type="text">
+				<i id="top-search-close">&times;</i>
+			</div>
+	</header>
+
+	<section id="main">
+		<aside id="sidebar">
+			<div class="sidebar-inner c-overflow">
+				<div class="profile-menu">
+					<a href="">
+						<div class="profile-pic">
+							<img src="{{ url_for('static', filename='img/profile-pics/xiaodai.png') }}" alt="">
+						</div>
+
+						<div class="profile-info">
+							小袋
+							<i class="zmdi zmdi-arrow-drop-down"></i>
+						</div>
+					</a>
+
+					<ul class="main-menu">
+						<li>
+							<a href="profile-about.html"><i class="zmdi zmdi-account"></i> 个人档案</a>
+						</li>
+						<li>
+							<a href=""><i class="zmdi zmdi-input-antenna"></i> 信息设置</a>
+						</li>
+						<li>
+							<a href=""><i class="zmdi zmdi-time-restore"></i> 退出系统</a>
+						</li>
+					</ul>
+				</div>
+
+				<ul class="main-menu">
+					<li class="active"><a href="index.html"><i class="zmdi zmdi-home"></i> 主页</a></li>
+					<li class="sub-menu">
+						<a href=""><i class="zmdi zmdi-widgets"></i> 学科教研</a>
+						<ul>
+							<li><a href="profession.html">法律</a></li>
+							<li><a href="profession.html">行政管理</a></li>
+							<li><a href="profession.html">新闻</a></li>
+							<li><a href="profession.html">人力资源</a></li>
+							<li><a href="profession.html">汉语言文学</a></li>
+							<li><a href="profession.html">采购管理</a></li>
+							<li><a href="profession.html">工商企业管理</a></li>
+							<li><a href="profession.html">会计</a></li>
+							<li><a href="profession.html">物流</a></li>
+							<li><a href="profession.html">金融</a></li>
+							<li><a href="profession.html">市场营销</a></li>
+							<li><a href="profession.html">工商企业管理</a></li>
+							<li><a href="profession.html">计算机相关</a></li>
+						</ul>
+					</li>
+					<li class="sub-menu">
+						<a href=""><i class="zmdi zmdi-pin"></i> 各省自考</a>
+
+						<ul>
+							<li><a href="province.html">河北</a></li>
+							<li><a href="province.html">山东</a></li>
+							<li><a href="province.html">河南</a></li>
+							<li><a href="province.html">福建</a></li>
+							<li><a href="province.html">广东</a></li>
+							<li><a href="province.html">江苏</a></li>
+							<li><a href="province.html">浙江</a></li>
+							<li><a href="province.html">湖南</a></li>
+							<li><a href="province.html">北京</a></li>
+						</ul>
+					</li>
+					<li class="sub-menu">
+						<a href=""><i class="zmdi zmdi-collection-text"></i> 资讯</a>
+
+						<ul>
+							<li><a href="newslist?type=DAILY_CHEESE">每日芝士</a></li>
+							<li><a href="newslist?type=EXAMINATION_ROAD">自考路上</a></li>
+							<li><a href="newslist?type=SIGN_UP_INFO">报考讯息</a></li>
+							<li><a href="newslist?type=OFFICIAL_NEWS">新闻看点</a></li>
+							<li><a href="newslist?type=COMMEN_QUESTION">常见问题</a></li>
+						</ul>
+					</li>
+					<li class="sub-menu" >
+						<a href=""><i class="zmdi zmdi-collection-text"></i> BBS</a>
+						<ul  id="bbs">
+							
+						</ul>
+					</li>
+					<li class="sub-menu">
+						<a href=""><i class="zmdi zmdi-account"></i> 用户管理</a>
+
+						<ul>
+							<li><a href="user-mgt.html">账户管理</a></li>
+						</ul>
+					</li>
+				</ul>
+			</div>
+		</aside>
+	
+		{% block content %}{% endblock %}
+<script>
+	var BBSUrl = "/forums";
+$.ajax({
+	type: 'get',
+	url: BBSUrl,
+	dataType: "json",
+	success: function(data) {
+
+ ShowBBSList(data);
+	},
+	error: function(data) {
+		console.log("BBS error");
+	}
+});
+
+function ShowBBSList(data){
+	var obj=data.msg;
+	for(var i=0;i<obj.length;i++){
+		var oli=$('<li></li>');
+		$('#bbs').append(oli);
+		
+		var oa=$('<a></a>');
+		oa.attr('href','BBSlist?type='+obj[i].forumId);
+		oa.text(obj[i].forumName);
+		oa.appendTo(oli);
+	}
+}
+
+</script>
+	
+</body>
+
+</html>

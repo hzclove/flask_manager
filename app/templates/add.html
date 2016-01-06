@@ -1,0 +1,58 @@
+{% extends "base.html" %}
+{% block title %}{{ title }}{% endblock %}
+{% block page_content %}
+    {{ wtf.quick_form(form) }}
+    <script type="text/javascript" src="{{ url_for('static', filename='jquery.min.js') }}"></script>
+        <script>
+        $(document).ready(function() {
+            $('#provinceId').empty();
+            $('#provinceId').change(sfchange);
+            $('#majorId').empty();
+            $.ajax({
+                type: "GET",
+                url: "/provinces", //测试数据
+                success: function(data) {
+                    console.log(data);
+                    $('#provinceId').empty();
+                    for (var m = 0; m < data.msg.length; m++) {
+                        var opt = $('<option></option>');
+                        opt.html(data.msg[m]);
+                        $('#provinceId').append(opt);
+                    }
+                },
+                error: function(data) {
+                    console.log("error");
+                }
+            });
+        });
+
+        function sfchange() {
+            var aa = document.getElementById('provinceId').value;
+            var test = {
+                    province_name: aa
+                }
+            // var test = {
+            //         province_name: '北京市'
+            //     }
+            // $.post("/majors", { name: "John", time: "2pm" } );
+            $.ajax({
+                type: "GET",
+                url: "/majors", //测试数据
+                data:  test,
+                dataType: "json",
+                success: function(data) {
+                    console.log(data);
+                    $('#majorId').empty();
+                    for (var m = 0; m < data.msg.length; m++) {
+                        var opt = $('<option></option>');
+                        opt.html(data.msg[m]);
+                        $('#majorId').append(opt);
+                    }
+                },
+                error: function(data) {
+                    console.log("error");
+                }
+            });
+        }
+    </script>
+{% endblock %}
